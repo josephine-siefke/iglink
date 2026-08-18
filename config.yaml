@@ -1,0 +1,36 @@
+data:
+  data-dir: data # Where all the data is stored
+  profile-pics-dir: profile_pics # Inside the data folder where the profile pics are stored
+  headers-file-name: headers.txt # Inside the data folder. Name of the header file you put your content in
+  followers-file-name: followers.jsonl # Inside the data folder where followers are stored.
+  mutuals-file-name: mutuals.jsonl # Inside the data folder where mutuals are stored.
+  output-file-name: output.html # Inside the data folder where the output is stored.
+
+request:
+  delay-seconds: 40 # Delay after each request to the instagram server
+  delay-deviation-min-seconds: 10 # Delay min deviation after each request to the instagram server
+  delay-deviation-max-seconds: 10 # Delay max deviation after each request to the instagram server
+
+pull-max-amount:
+  followers: 25 # Max amount followers to pull during one cycle
+  mutuals: 100 # Max amount mutuals to pull during one cycle
+
+graph:
+  width: 1000 # output file pixel width
+  height: 1000 # output file pixel height
+  exclude-followers: [] # exclude follower in the graph i.e. ['some.username.handle', 'some.other.username.handle']
+  colors: # cycle between those colors for each community. from biggest to smallest community. communites <=3 will be colored grey (#B2BEB5)
+    - "#4E79A7"
+    - "#F28E2B"
+    - "#E15759"
+    - "#76B7B2"
+    - "#59A14F"
+    - "#EDC948"
+    - "#B07AA1"
+    - "#FF9DA7"
+    - "#9C755F"
+    - "#BAB0AC"
+  community:
+    seed: 42 # community seed. change to get different communities classifications
+    resolution: 1.0 # louvain community detection resolution. If resolution is less than 1, the algorithm favors larger communities. Greater than 1 favors smaller communities
+  initial-position-seed: 42 # initial position of the nodes in the graph seed

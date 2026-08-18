@@ -1,0 +1,27 @@
+[project]
+name = "iglink"
+version = "0.1.0"
+description = "IG LInked NetworK (IGLINK) is a tool to create an interactive map with all your instagram followers and mutuals."
+readme = "README.md"
+authors = [
+    { name = "Qi Kang Chen"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "argparse>=1.4.0",
+    "jsonlines>=4.0.0",
+    "networkx>=3.6.1",
+    "pandas>=3.0.5",
+    "pytest>=9.1.1",
+    "pyvis>=0.3.2",
+    "pyyaml>=6.0.3",
+    "requests>=2.34.2",
+    "tqdm>=4.70.0",
+]
+
+[project.scripts]
+ig-mutals = "igmutuals:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
